@@ -109,6 +109,8 @@
     <None Include="Resources\list_16x14.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\boat.jpg" />
+    <None Include="Resources\boat1.jpg" />
     <Content Include="Sailing-Boat.ico" />
     <None Include="Resources\thumbs_down.png" />
     <None Include="Resources\aperture_16x16.png" />
