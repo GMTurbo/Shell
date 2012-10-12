@@ -940,6 +940,38 @@ namespace NsShell
         {
             treeView1.ExpandAll();
         }
+        //********************** Gabe/Ken Update 10/12 ************************
+        // define list of possible file names. 
+
+        List<string> FileTypes = new List<string>() { "dblam", "lam", "yarn", "grid", "db" };
+
+        /// <summary>
+        /// get file type of w4l if w4l is a grid, yarn, dblam, db, or lam file, else do nothing
+        /// </summary>
+        /// <param name="w4lfilename">w4l filename (not the full filename)</param>
+        /// <param name="type">this will give you the file type if one is found</param>
+        /// <returns>true if it found something, false otherwise</returns>
+        bool GetFileType(string w4lfilename, ref string type)
+        {
+            string workingFilename = w4lfilename.ToLower();
+            List<string> foundTypes = new List<string>();
+            for (int i = 0; i < FileTypes.Count; i++)
+            {
+                if (workingFilename.Contains(FileTypes[i]))
+                    foundTypes.Add(FileTypes[i]);
+            }
+
+            if (foundTypes.Contains("dblam") && foundTypes.Contains("lam") && foundTypes.Contains("db"))
+                type = "dblam";
+            else if (foundTypes.Count > 0)
+                type = foundTypes[0];
+            else
+                return false;
+
+            return true;
+
+        }
+        //************************************************************************
 
         private void treeView1_DoubleClick(object sender, EventArgs e)
         {
@@ -949,11 +981,23 @@ namespace NsShell
                 addMru(SailFile.FullName);
 
                 // ************** Modified by Salvo 10/12 **************
+                string newFileName = "";
+                string newPathw4l = "";
 
-                //make new filename with these rules: take 2 characters before and two characters after the dash and assign that to the new w4l filename Yarn.w4l
-                string newFileName = SailFile.Name.Substring(SailFile.Name.LastIndexOf("-") - 2, 2) + SailFile.Name.Substring(SailFile.Name.LastIndexOf("-") + 1, 2) + "YARN.w4l";
-                //make directory with working directory and new filename
-                string newPathw4l = SailFile.DirectoryName + "\\" + newFileName;
+                string type = "";
+                if (!GetFileType(treeView1.SelectedNode.Text, ref type))
+                {
+                    //make new filename with these rules: take 2 characters before and two characters after the dash and assign that to the new w4l filename Yarn.w4l
+                    newFileName = SailFile.Name.Substring(SailFile.Name.LastIndexOf("-") - 2, 2) + SailFile.Name.Substring(SailFile.Name.LastIndexOf("-") + 1, 2) + "YARN.w4l";
+                    //make directory with working directory and new filename
+                    newPathw4l = SailFile.DirectoryName + "\\" + newFileName;
+                }
+                else
+                {
+                    newFileName = SailFile.Name.Substring(SailFile.Name.LastIndexOf("-") - 2, 2) + SailFile.Name.Substring(SailFile.Name.LastIndexOf("-") + 1, 2) + type.ToUpper() + ".w4l";
+                    //make directory with working directory and new filename
+                    newPathw4l = SailFile.DirectoryName + "\\" + newFileName;
+                }
 
                 //********************************************************
 
