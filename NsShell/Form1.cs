@@ -945,9 +945,18 @@ namespace NsShell
         {
             if (treeView1.SelectedNode != null && SailFile != null)
             {
+                
                 addMru(SailFile.FullName);
 
-                string newPathw4l = SailFile.DirectoryName + "\\" + Path.GetFileName(treeView1.SelectedNode.Tag.ToString());
+                // ************** Modified by Salvo 10/12 **************
+
+                //make new filename with these rules: take 2 characters before and two characters after the dash and assign that to the new w4l filename Yarn.w4l
+                string newFileName = SailFile.Name.Substring(SailFile.Name.LastIndexOf("-") - 2, 2) + SailFile.Name.Substring(SailFile.Name.LastIndexOf("-") + 1, 2) + "YARN.w4l";
+                //make directory with working directory and new filename
+                string newPathw4l = SailFile.DirectoryName + "\\" + newFileName;
+
+                //********************************************************
+
                 Status = "Launching Layout...";
                 string layoutPath = PathSetter.LayoutExeFullPath;
                 string iniFilePath = PathSetter.LayoutIniFullPath;
@@ -973,7 +982,6 @@ namespace NsShell
                     info.FileName = @layoutPath;
                     info.Arguments = string.Format("{0}", "\"" + newPathw4l + "\"");
                     System.Diagnostics.Process.Start(info);
-                    //System.Diagnostics.Process.Start(newPathw4l);
                 }
                 catch (Exception ex)
                 {
@@ -1112,7 +1120,7 @@ namespace NsShell
             workerList.RunWorkerAsync(fullfiles);
         }
 
-        private void addMru(string fullfilename) 
+        private void addMru(string fullfilename)
         {
             if (fullfilename == null)
                 return;

@@ -37,6 +37,7 @@
             this.m_launchMPF = new System.Windows.Forms.Button();
             this.m_LaunchPLC = new System.Windows.Forms.Button();
             this.MoldListView = new System.Windows.Forms.ListView();
+            this.listLoading = new System.Windows.Forms.PictureBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -45,18 +46,33 @@
             this.Program = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Pathname = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listViewContext = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.locateOnDiskToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.openSailDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripSeparator();
+            this.openSailDirectoryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.treeLoading = new System.Windows.Forms.PictureBox();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addW4lDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.locateOnDiskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.expandTreeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.collapseAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.treeSearchTextBox = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,22 +86,6 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.listLoading = new System.Windows.Forms.PictureBox();
-            this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.locateOnDiskToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.openSailDirectoryToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.treeLoading = new System.Windows.Forms.PictureBox();
-            this.addW4lDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
-            this.locateOnDiskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.expandTreeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.collapseAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printPreviewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -95,13 +95,13 @@
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listLoading)).BeginInit();
             this.listViewContext.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.treeLoading)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listLoading)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.treeLoading)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -215,6 +215,18 @@
             this.MoldListView.SelectedIndexChanged += new System.EventHandler(this.MoldListView_SelectedIndexChanged);
             this.MoldListView.DoubleClick += new System.EventHandler(this.MoldListView_DoubleClick);
             // 
+            // listLoading
+            // 
+            this.listLoading.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listLoading.Image = global::NsShell.Properties.Resources.loading;
+            this.listLoading.Location = new System.Drawing.Point(0, 0);
+            this.listLoading.Name = "listLoading";
+            this.listLoading.Size = new System.Drawing.Size(741, 301);
+            this.listLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.listLoading.TabIndex = 2;
+            this.listLoading.TabStop = false;
+            this.listLoading.DoubleClick += new System.EventHandler(this.listLoading_DoubleClick);
+            // 
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -273,10 +285,51 @@
             this.listViewContext.Name = "listViewContext";
             this.listViewContext.Size = new System.Drawing.Size(176, 76);
             // 
+            // openFileToolStripMenuItem
+            // 
+            this.openFileToolStripMenuItem.Image = global::NsShell.Properties.Resources.folder_stroke_16x16;
+            this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.openFileToolStripMenuItem.Text = "Open File";
+            this.openFileToolStripMenuItem.Click += new System.EventHandler(this.openFileToolStripMenuItem_Click);
+            // 
+            // locateOnDiskToolStripMenuItem1
+            // 
+            this.locateOnDiskToolStripMenuItem1.Image = global::NsShell.Properties.Resources.eye_12x9;
+            this.locateOnDiskToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.locateOnDiskToolStripMenuItem1.Name = "locateOnDiskToolStripMenuItem1";
+            this.locateOnDiskToolStripMenuItem1.Size = new System.Drawing.Size(175, 22);
+            this.locateOnDiskToolStripMenuItem1.Text = "Locate On Disk";
+            this.locateOnDiskToolStripMenuItem1.Click += new System.EventHandler(this.locateOnDiskToolStripMenuItem1_Click);
+            // 
             // openSailDirectoryToolStripMenuItem
             // 
             this.openSailDirectoryToolStripMenuItem.Name = "openSailDirectoryToolStripMenuItem";
             this.openSailDirectoryToolStripMenuItem.Size = new System.Drawing.Size(172, 6);
+            // 
+            // openSailDirectoryToolStripMenuItem1
+            // 
+            this.openSailDirectoryToolStripMenuItem1.Image = global::NsShell.Properties.Resources.aperture_16x16;
+            this.openSailDirectoryToolStripMenuItem1.Name = "openSailDirectoryToolStripMenuItem1";
+            this.openSailDirectoryToolStripMenuItem1.Size = new System.Drawing.Size(175, 22);
+            this.openSailDirectoryToolStripMenuItem1.Text = "Open Sail Directory";
+            this.openSailDirectoryToolStripMenuItem1.Click += new System.EventHandler(this.openSailDirectoryToolStripMenuItem1_Click);
+            // 
+            // treeLoading
+            // 
+            this.treeLoading.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.treeLoading.BackColor = System.Drawing.Color.Transparent;
+            this.treeLoading.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.treeLoading.Image = global::NsShell.Properties.Resources.loading;
+            this.treeLoading.Location = new System.Drawing.Point(0, 0);
+            this.treeLoading.Name = "treeLoading";
+            this.treeLoading.Size = new System.Drawing.Size(239, 529);
+            this.treeLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.treeLoading.TabIndex = 1;
+            this.treeLoading.TabStop = false;
+            this.treeLoading.DoubleClick += new System.EventHandler(this.treeLoading_DoubleClick);
             // 
             // treeView1
             // 
@@ -303,15 +356,66 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(169, 126);
             // 
+            // addW4lDirectoryToolStripMenuItem
+            // 
+            this.addW4lDirectoryToolStripMenuItem.Image = global::NsShell.Properties.Resources.list_nested_24x21;
+            this.addW4lDirectoryToolStripMenuItem.Name = "addW4lDirectoryToolStripMenuItem";
+            this.addW4lDirectoryToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.addW4lDirectoryToolStripMenuItem.Text = "Add w4l Directory";
+            this.addW4lDirectoryToolStripMenuItem.Click += new System.EventHandler(this.addW4lDirectoryToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Image = global::NsShell.Properties.Resources.x_21x21;
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(168, 22);
+            this.toolStripMenuItem5.Text = "Delete Node";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(165, 6);
             // 
+            // locateOnDiskToolStripMenuItem
+            // 
+            this.locateOnDiskToolStripMenuItem.Image = global::NsShell.Properties.Resources.eye_12x9;
+            this.locateOnDiskToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.locateOnDiskToolStripMenuItem.Name = "locateOnDiskToolStripMenuItem";
+            this.locateOnDiskToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.locateOnDiskToolStripMenuItem.Text = "Locate On Disk";
+            this.locateOnDiskToolStripMenuItem.Click += new System.EventHandler(this.locateOnDiskToolStripMenuItem_Click);
+            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(165, 6);
+            // 
+            // expandTreeToolStripMenuItem
+            // 
+            this.expandTreeToolStripMenuItem.Image = global::NsShell.Properties.Resources.list_nested_16x14;
+            this.expandTreeToolStripMenuItem.Name = "expandTreeToolStripMenuItem";
+            this.expandTreeToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.expandTreeToolStripMenuItem.Text = "Expand All";
+            this.expandTreeToolStripMenuItem.Click += new System.EventHandler(this.expandTreeToolStripMenuItem_Click);
+            // 
+            // collapseAllToolStripMenuItem
+            // 
+            this.collapseAllToolStripMenuItem.Image = global::NsShell.Properties.Resources.list_16x14;
+            this.collapseAllToolStripMenuItem.Name = "collapseAllToolStripMenuItem";
+            this.collapseAllToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.collapseAllToolStripMenuItem.Text = "Collapse All";
+            this.collapseAllToolStripMenuItem.Click += new System.EventHandler(this.collapseAllToolStripMenuItem_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::NsShell.Properties.Resources.search1;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(22, 19);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // treeSearchTextBox
             // 
@@ -355,6 +459,25 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
             // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripMenuItem.Image")));
+            this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.newToolStripMenuItem.Text = "&New Design";
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
+            this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.openToolStripMenuItem.Text = "&Open Design";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
             // recentToolStripMenuItem
             // 
             this.recentToolStripMenuItem.Name = "recentToolStripMenuItem";
@@ -367,6 +490,15 @@
             this.toolStripSeparator.Name = "toolStripSeparator";
             this.toolStripSeparator.Size = new System.Drawing.Size(182, 6);
             // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
+            this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.saveToolStripMenuItem.Text = "&Save";
+            // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
@@ -377,6 +509,23 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(182, 6);
+            // 
+            // printToolStripMenuItem
+            // 
+            this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
+            this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+            this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.printToolStripMenuItem.Text = "&Print";
+            // 
+            // printPreviewToolStripMenuItem
+            // 
+            this.printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripMenuItem.Image")));
+            this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.printPreviewToolStripMenuItem.Text = "Print Pre&view";
             // 
             // toolStripSeparator2
             // 
@@ -456,155 +605,6 @@
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Size = new System.Drawing.Size(32, 19);
             // 
-            // listLoading
-            // 
-            this.listLoading.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listLoading.Image = global::NsShell.Properties.Resources.loading;
-            this.listLoading.Location = new System.Drawing.Point(0, 0);
-            this.listLoading.Name = "listLoading";
-            this.listLoading.Size = new System.Drawing.Size(741, 301);
-            this.listLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.listLoading.TabIndex = 2;
-            this.listLoading.TabStop = false;
-            this.listLoading.DoubleClick += new System.EventHandler(this.listLoading_DoubleClick);
-            // 
-            // openFileToolStripMenuItem
-            // 
-            this.openFileToolStripMenuItem.Image = global::NsShell.Properties.Resources.folder_stroke_16x16;
-            this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.openFileToolStripMenuItem.Text = "Open File";
-            this.openFileToolStripMenuItem.Click += new System.EventHandler(this.openFileToolStripMenuItem_Click);
-            // 
-            // locateOnDiskToolStripMenuItem1
-            // 
-            this.locateOnDiskToolStripMenuItem1.Image = global::NsShell.Properties.Resources.eye_12x9;
-            this.locateOnDiskToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.locateOnDiskToolStripMenuItem1.Name = "locateOnDiskToolStripMenuItem1";
-            this.locateOnDiskToolStripMenuItem1.Size = new System.Drawing.Size(175, 22);
-            this.locateOnDiskToolStripMenuItem1.Text = "Locate On Disk";
-            this.locateOnDiskToolStripMenuItem1.Click += new System.EventHandler(this.locateOnDiskToolStripMenuItem1_Click);
-            // 
-            // openSailDirectoryToolStripMenuItem1
-            // 
-            this.openSailDirectoryToolStripMenuItem1.Image = global::NsShell.Properties.Resources.aperture_16x16;
-            this.openSailDirectoryToolStripMenuItem1.Name = "openSailDirectoryToolStripMenuItem1";
-            this.openSailDirectoryToolStripMenuItem1.Size = new System.Drawing.Size(175, 22);
-            this.openSailDirectoryToolStripMenuItem1.Text = "Open Sail Directory";
-            this.openSailDirectoryToolStripMenuItem1.Click += new System.EventHandler(this.openSailDirectoryToolStripMenuItem1_Click);
-            // 
-            // treeLoading
-            // 
-            this.treeLoading.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.treeLoading.BackColor = System.Drawing.Color.Transparent;
-            this.treeLoading.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.treeLoading.Image = global::NsShell.Properties.Resources.loading;
-            this.treeLoading.Location = new System.Drawing.Point(0, 0);
-            this.treeLoading.Name = "treeLoading";
-            this.treeLoading.Size = new System.Drawing.Size(239, 529);
-            this.treeLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.treeLoading.TabIndex = 1;
-            this.treeLoading.TabStop = false;
-            this.treeLoading.DoubleClick += new System.EventHandler(this.treeLoading_DoubleClick);
-            // 
-            // addW4lDirectoryToolStripMenuItem
-            // 
-            this.addW4lDirectoryToolStripMenuItem.Image = global::NsShell.Properties.Resources.list_nested_24x21;
-            this.addW4lDirectoryToolStripMenuItem.Name = "addW4lDirectoryToolStripMenuItem";
-            this.addW4lDirectoryToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.addW4lDirectoryToolStripMenuItem.Text = "Add w4l Directory";
-            this.addW4lDirectoryToolStripMenuItem.Click += new System.EventHandler(this.addW4lDirectoryToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.Image = global::NsShell.Properties.Resources.x_21x21;
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(168, 22);
-            this.toolStripMenuItem5.Text = "Delete Node";
-            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
-            // 
-            // locateOnDiskToolStripMenuItem
-            // 
-            this.locateOnDiskToolStripMenuItem.Image = global::NsShell.Properties.Resources.eye_12x9;
-            this.locateOnDiskToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.locateOnDiskToolStripMenuItem.Name = "locateOnDiskToolStripMenuItem";
-            this.locateOnDiskToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.locateOnDiskToolStripMenuItem.Text = "Locate On Disk";
-            this.locateOnDiskToolStripMenuItem.Click += new System.EventHandler(this.locateOnDiskToolStripMenuItem_Click);
-            // 
-            // expandTreeToolStripMenuItem
-            // 
-            this.expandTreeToolStripMenuItem.Image = global::NsShell.Properties.Resources.list_nested_16x14;
-            this.expandTreeToolStripMenuItem.Name = "expandTreeToolStripMenuItem";
-            this.expandTreeToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.expandTreeToolStripMenuItem.Text = "Expand All";
-            this.expandTreeToolStripMenuItem.Click += new System.EventHandler(this.expandTreeToolStripMenuItem_Click);
-            // 
-            // collapseAllToolStripMenuItem
-            // 
-            this.collapseAllToolStripMenuItem.Image = global::NsShell.Properties.Resources.list_16x14;
-            this.collapseAllToolStripMenuItem.Name = "collapseAllToolStripMenuItem";
-            this.collapseAllToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.collapseAllToolStripMenuItem.Text = "Collapse All";
-            this.collapseAllToolStripMenuItem.Click += new System.EventHandler(this.collapseAllToolStripMenuItem_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::NsShell.Properties.Resources.search1;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(22, 19);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // newToolStripMenuItem
-            // 
-            this.newToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripMenuItem.Image")));
-            this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.newToolStripMenuItem.Text = "&New Design";
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem.Image")));
-            this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.openToolStripMenuItem.Text = "&Open Design";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
-            this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.saveToolStripMenuItem.Text = "&Save";
-            // 
-            // printToolStripMenuItem
-            // 
-            this.printToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem.Image")));
-            this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.printToolStripMenuItem.Text = "&Print";
-            // 
-            // printPreviewToolStripMenuItem
-            // 
-            this.printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripMenuItem.Image")));
-            this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
-            this.printPreviewToolStripMenuItem.Text = "Print Pre&view";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -631,15 +631,15 @@
             this.splitContainer2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listLoading)).EndInit();
             this.listViewContext.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.treeLoading)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listLoading)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.treeLoading)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
