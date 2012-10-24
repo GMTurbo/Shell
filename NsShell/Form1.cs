@@ -998,8 +998,16 @@ namespace NsShell
                     //make directory with working directory and new filename
                     newPathw4l = SailFile.DirectoryName + "\\" + newFileName;
                 }
+                bool sigue = false;
+                if (File.Exists(newPathw4l))
+                {
+                    try { File.Delete(newPathw4l); sigue = true; }
+                    catch (Exception ex) { MessageBox.Show(ex.Message, "NsShell", MessageBoxButtons.OK, MessageBoxIcon.Error);  }
+                }
 
                 //********************************************************
+                if (!sigue)
+                    return;
 
                 Status = "Launching Layout...";
                 string layoutPath = PathSetter.LayoutExeFullPath;
