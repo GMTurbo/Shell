@@ -1002,7 +1002,11 @@ namespace NsShell
                 if (File.Exists(newPathw4l))
                 {
                     try { File.Delete(newPathw4l); sigue = true; }
-                    catch (Exception ex) { MessageBox.Show(ex.Message, "NsShell", MessageBoxButtons.OK, MessageBoxIcon.Error);  }
+                    catch (Exception ex) { MessageBox.Show(ex.Message, "NsShell", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                }
+                else
+                {
+                    sigue = true;                
                 }
 
                 //********************************************************
@@ -1227,6 +1231,7 @@ namespace NsShell
                 }
             }
         }
+
     }
 
     /// <summary>

@@ -329,6 +329,7 @@
             this.treeLoading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.treeLoading.TabIndex = 1;
             this.treeLoading.TabStop = false;
+            //this.treeLoading.Click += new System.EventHandler(this.treeLoading_Click);
             this.treeLoading.DoubleClick += new System.EventHandler(this.treeLoading_DoubleClick);
             // 
             // treeView1
