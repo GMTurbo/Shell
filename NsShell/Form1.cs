@@ -147,7 +147,9 @@ namespace NsShell
             statSetter = ((message) => { m_statusText.Text = message; });
             ToggleTreeLoadIcon(false);
             ToggleListLoadIcon(false);
-
+            //Ken added 11-9-12
+            listView1.DoubleClick +=listView1_DoubleClick;
+            //
             SetupWorker();
 
             LoadMoldListView();
@@ -794,8 +796,13 @@ namespace NsShell
                     break;
             }
         }
+        //Ken added 11-9-12
+        private void listView1_DoubleClick(object sender, EventArgs e)
+        {
+            openFileToolStripMenuItem_Click(sender, e);
+        }
 
-        private void MoldListView_SelectedIndexChanged(object sender, EventArgs e)
+                private void MoldListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             for (int i = 0; i < MoldListView.Items.Count; i++)
                 MoldListView.Items[i].ForeColor = Color.White;
@@ -977,7 +984,7 @@ namespace NsShell
         {
             if (treeView1.SelectedNode != null && SailFile != null)
             {
-                
+
                 addMru(SailFile.FullName);
 
                 // ************** Modified by Salvo 10/12 **************
@@ -1006,7 +1013,7 @@ namespace NsShell
                 }
                 else
                 {
-                    sigue = true;                
+                    sigue = true;
                 }
 
                 //********************************************************
